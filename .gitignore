@@ -1,0 +1,28 @@
+# macOS / editor noise
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Large generated artifacts
+custom_dual_head_model.pth
+data/images/
+reports/vlm_robustness_report.html
+figs/failure_cases/
+
+# Legacy / low-quality generated PDFs from earlier report drafts
+figs/*.pdf
+
+# Optional local runtime outputs
+*.log
+
+
+# Presentation generation scratch files
+create_presentation.py
+create_projectdeck_7slides.py
+slides_assets/

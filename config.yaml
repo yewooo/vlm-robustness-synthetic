@@ -1,0 +1,51 @@
+project:
+  name: synthetic-vlm-robustness
+  random_seed: 42
+  base_path: /content/drive/MyDrive/Colab Notebooks/COMP646/final project
+
+data:
+  image_size: 256
+  train_json: data/synthetic_vlm_train.json
+  test_json: data/synthetic_vlm_test.json
+  image_dir: data/images
+  train_size: 3000
+  validation_split_from_train: 0.20
+  test_size: 600
+  shapes: [square, circle, triangle]
+  colors: [red, blue, green, yellow]
+
+models:
+  blip:
+    display_name: BLIP VQA Base
+    model_id: Salesforce/blip-vqa-base
+    max_new_tokens: 5
+  custom:
+    display_name: Custom Dual-Head VQA Model
+    checkpoint: custom_dual_head_model.pth
+    image_encoder: ResNet-18 pretrained on ImageNet
+    text_encoder: Bidirectional GRU over learned word embeddings
+    heads:
+      yes_no: existence, spatial, comparison
+      count: counting
+
+perturbations:
+  brightness:
+    factor: 0.5
+  noise:
+    noise_std: 20
+  text:
+    enabled: true
+
+evaluation:
+  perturbations: [brightness, noise, text]
+  query_types: [existence, count, spatial, comparison]
+  results_dir: results
+  figures_dir: figs
+  reports_dir: reports
+
+visualization:
+  dpi: 300
+  image_border_color: "#444444"
+  image_border_width: 3
+  max_failure_examples: 12
+  max_report_examples: 24

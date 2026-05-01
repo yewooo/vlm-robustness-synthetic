@@ -1,0 +1,13 @@
+torch
+torchvision
+transformers
+accelerate
+sentencepiece
+numpy
+pandas
+Pillow
+matplotlib
+seaborn
+PyYAML
+python-pptx
+

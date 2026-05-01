@@ -1,0 +1,55 @@
+{
+  "BLIP VQA Base": {
+    "brightness": {
+      "num_robustness_failures": 10,
+      "by_question_type": {
+        "Counting": 6,
+        "Spatial Relationship": 2,
+        "Existence": 1,
+        "Comparison": 1
+      }
+    },
+    "noise": {
+      "num_robustness_failures": 15,
+      "by_question_type": {
+        "Comparison": 5,
+        "Counting": 8,
+        "Existence": 2
+      }
+    },
+    "text": {
+      "num_robustness_failures": 16,
+      "by_question_type": {
+        "Counting": 16
+      }
+    }
+  },
+  "Custom Dual-Head VQA": {
+    "brightness": {
+      "num_robustness_failures": 47,
+      "by_question_type": {
+        "Counting": 10,
+        "Spatial Relationship": 14,
+        "Existence": 13,
+        "Comparison": 10
+      }
+    },
+    "noise": {
+      "num_robustness_failures": 53,
+      "by_question_type": {
+        "Existence": 18,
+        "Counting": 13,
+        "Spatial Relationship": 11,
+        "Comparison": 11
+      }
+    },
+    "text": {
+      "num_robustness_failures": 13,
+      "by_question_type": {
+        "Comparison": 3,
+        "Existence": 9,
+        "Counting": 1
+      }
+    }
+  }
+}
